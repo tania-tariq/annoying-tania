@@ -1,0 +1,603 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffd1e3,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #c471ed
+        );
+
+    color: #48182d;
+
+    overflow-x: hidden;
+}
+
+
+/* HEARTS */
+
+#hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation:
+        floatUp linear forwards;
+
+    opacity: 0.9;
+}
+
+
+/* PAGES */
+
+.page {
+
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.page.active {
+
+    display: flex;
+
+    animation:
+        pageIn 0.8s ease;
+}
+
+
+/* CARD */
+
+.card {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(80,20,60,0.25);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+/* TEXT */
+
+h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+h2 {
+
+    color: #e83e73;
+
+    margin: 20px 0;
+
+}
+
+p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin: 15px 0;
+}
+
+.big {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    color: #e83e73;
+}
+
+.emoji {
+
+    font-size: 70px;
+
+    animation:
+        bounce 2s infinite;
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: none;
+
+    padding: 16px 28px;
+
+    margin-top: 20px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff416c,
+            #ff4b8b
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255,65,108,0.35);
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* HIGHLIGHT */
+
+.highlight {
+
+    background: #ffe3ee;
+
+    padding: 18px;
+
+    margin: 25px 0;
+
+    border-radius: 20px;
+
+    color: #d72f66;
+
+    font-weight: bold;
+
+    font-size: 19px;
+}
+
+
+/* GALLERY */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.photo {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.18);
+
+    animation:
+        photoFloat 3s ease-in-out infinite;
+}
+
+.photo:nth-child(2) {
+
+    animation-delay:
+        0.5s;
+}
+
+.photo:nth-child(3) {
+
+    animation-delay:
+        1s;
+}
+
+.photo img {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        0.5s;
+}
+
+.photo:hover img {
+
+    transform:
+        scale(1.12);
+}
+
+.photo span {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    padding: 10px;
+
+    color: white;
+
+    background:
+        rgba(0,0,0,0.5);
+
+    font-size: 13px;
+}
+
+
+/* REASONS */
+
+.reasons div {
+
+    padding: 15px;
+
+    margin: 10px 0;
+
+    background: #fff0f5;
+
+    border-radius: 18px;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+.reasons div:hover {
+
+    transform:
+        translateX(10px);
+
+    background:
+        #ffe0eb;
+}
+
+
+/* QUESTION */
+
+.questionCard {
+
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.questionButtons {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 130px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.yes {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1744,
+            #ff5c8a
+        );
+}
+
+.no {
+
+    position: absolute;
+
+    transition:
+        left 0.2s,
+        top 0.2s;
+}
+
+#noMessage {
+
+    color: #e83e73;
+
+    font-weight: bold;
+
+    min-height: 25px;
+}
+
+
+/* FINAL */
+
+.bigHeart {
+
+    font-size: 110px;
+
+    animation:
+        heartbeat 1s infinite;
+}
+
+.finalPhoto {
+
+    width: 190px;
+
+    height: 190px;
+
+    margin: 25px auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 10px 40px
+        rgba(0,0,0,0.25);
+
+    animation:
+        photoFloat 3s infinite;
+}
+
+.finalPhoto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.forever {
+
+    padding: 20px;
+
+    margin-top: 25px;
+
+    border-radius: 22px;
+
+    background: #ffe3ed;
+
+    color: #e83e73;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.love {
+
+    animation:
+        heartbeat 1.2s infinite;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes pageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes bounce {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.12);
+    }
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes photoFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .card {
+
+        padding: 35px 20px;
+
+        border-radius: 28px;
+    }
+
+    h1 {
+
+        font-size: 30px;
+    }
+
+    h2 {
+
+        font-size: 23px;
+    }
+
+    p {
+
+        font-size: 16px;
+    }
+
+    .big {
+
+        font-size: 20px;
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .photo img {
+
+        height: 280px;
+    }
+
+    .bigHeart {
+
+        font-size: 85px;
+    }
+
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Zahra 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+
+    <div class="card intro">
+
+        <div class="sparkle">✨</div>
+
+        <h1>Hey Zahra... 🥺💗</h1>
+
+        <p>
+            Someone very special made something for you.
+        </p>
+
+        <p>
+            And yes... that someone is your annoying Tania. 😂❤️
+        </p>
+
+        <button onclick="goTo(2)">
+            Open Your Surprise 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+
+    <div class="card">
+
+        <div class="emoji">🥺💗</div>
+
+        <h1>Zahra, I'm Sorry...</h1>
+
+        <p>
+            I know you're upset with me.
+            And honestly, I don't like knowing
+            that my bestie is angry because of me.
+        </p>
+
+        <p>
+            I might make mistakes sometimes,
+            but hurting you was never my intention.
+        </p>
+
+        <div class="highlight">
+            Please forgive your Tania. 🥹❤️
+        </div>
+
+        <button onclick="goTo(3)">
+            But First... 🌷
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+
+    <div class="card">
+
+        <h1>Do You Remember? 🥹</h1>
+
+        <p>
+            All those times when I was sad,
+            stressed or overthinking...
+        </p>
+
+        <p class="big">
+            You were there for me. 🫂❤️
+        </p>
+
+        <p>
+            You always listened.
+            You always consoled me.
+            You always made me feel better.
+        </p>
+
+        <p>
+            And honestly...
+        </p>
+
+        <h2>
+            I don't know what I'd do without you. 🥺
+        </h2>
+
+        <button onclick="goTo(4)">
+            There's More ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 4 : MONEY SUPPORT -->
+<section class="page" id="page4">
+
+    <div class="card">
+
+        <div class="emoji">🎓🥹</div>
+
+        <h1>Zahra...</h1>
+
+        <p>
+            There is something I'll always remember.
+        </p>
+
+        <p>
+            When I needed help with my university fee,
+            you helped me.
+        </p>
+
+        <div class="highlight">
+
+            You didn't just say
+            "I'm here for you"...
+
+            <br><br>
+
+            You actually WERE there for me. ❤️
+
+        </div>
+
+        <p>
+            Your kindness means more to me
+            than I can explain in words.
+        </p>
+
+        <p class="big">
+            Thank you for everything. 🫶🏻
+        </p>
+
+        <button onclick="goTo(5)">
+            Now... Look At You 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 5 : PHOTO GALLERY -->
+<section class="page" id="page5">
+
+    <div class="card">
+
+        <h1>My Beautiful Bestie 🌷</h1>
+
+        <p>
+            How could I make a surprise for Zahra
+            without her pictures? 😂❤️
+        </p>
+
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="image1.jpg" alt="Zahra">
+                <span>My favorite person 💗</span>
+            </div>
+
+            <div class="photo">
+                <img src="image2.jpg" alt="Zahra">
+                <span>Always beautiful ✨</span>
+            </div>
+
+            <div class="photo">
+                <img src="image3.jpg" alt="Zahra">
+                <span>My forever bestie 🫶🏻</span>
+            </div>
+
+        </div>
+
+        <button onclick="goTo(6)">
+            One More Thing... 👀
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 6 : REASONS -->
+<section class="page" id="page6">
+
+    <div class="card">
+
+        <h1>Why You're Special To Me 💗</h1>
+
+        <div class="reasons">
+
+            <div>🌷 You always respect me.</div>
+
+            <div>🫂 You always console me.</div>
+
+            <div>❤️ You support me.</div>
+
+            <div>🎓 You helped me when I needed you.</div>
+
+            <div>🥹 You listen to my problems.</div>
+
+            <div>😂 You tolerate my drama.</div>
+
+            <div>💗 You make difficult days easier.</div>
+
+        </div>
+
+        <button onclick="goTo(7)">
+            Important Question 😭
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 7 : QUESTION -->
+<section class="page" id="page7">
+
+    <div class="card questionCard">
+
+        <div class="emoji">👀💗</div>
+
+        <h1>Zahra...</h1>
+
+        <h2>Do You Love Me? 🥺</h2>
+
+        <p>
+            Be careful before answering... 😂
+        </p>
+
+        <div class="questionButtons">
+
+            <button class="yes" onclick="yesAnswer()">
+                YES! ❤️
+            </button>
+
+            <button
+                class="no"
+                id="noButton"
+                onmouseover="moveNo()"
+                onclick="moveNo()">
+
+                NO 😭
+
+            </button>
+
+        </div>
+
+        <p id="noMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 8 : FINAL -->
+<section class="page" id="page8">
+
+    <div class="card finalCard">
+
+        <div class="bigHeart">
+            💖
+        </div>
+
+        <h1>YAYYYYY! 😭❤️</h1>
+
+        <h2>I KNEW IT! 😂</h2>
+
+        <p>
+            Because there's absolutely no way
+            Zahra can say NO to Tania. 😌😂
+        </p>
+
+        <div class="finalPhoto">
+
+            <img src="zahra1.jpg" alt="Zahra">
+
+        </div>
+
+        <p class="big">
+            Zahra, you're not just my best friend...
+        </p>
+
+        <p>
+            You're one of the most precious people
+            in my life.
+        </p>
+
+        <p>
+            Thank you for respecting me,
+            supporting me,
+            consoling me,
+            helping me,
+            and simply being there.
+        </p>
+
+        <div class="highlight">
+
+            No matter how many fights we have...
+
+            <br>
+
+            I'm still choosing you. ❤️
+
+        </div>
+
+        <h2>
+            Please forgive your Tania. 🥺
+        </h2>
+
+        <div class="forever">
+
+            TANIA ❤️ ZAHRA
+
+            <br><br>
+
+            BESTIES FOREVER ♾️
+
+        </div>
+
+        <h1 class="love">
+            I LOVE YOU BESTIE! 💗
+        </h1>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
